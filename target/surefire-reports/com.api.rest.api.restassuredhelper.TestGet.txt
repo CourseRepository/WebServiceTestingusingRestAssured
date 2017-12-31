@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.api.rest.api.restassuredhelper.TestGet
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.176 s <<< FAILURE! - in com.api.rest.api.restassuredhelper.TestGet
+testXmlContentXmlPath(com.api.rest.api.restassuredhelper.TestGet)  Time elapsed: 0.018 s  <<< ERROR!
+io.restassured.path.xml.exception.XmlPathException: Failed to parse the XML document
+	at com.api.rest.api.restassuredhelper.TestGet.testXmlContentXmlPath(TestGet.java:173)
+Caused by: org.xml.sax.SAXParseException: Premature end of file.
+	at com.api.rest.api.restassuredhelper.TestGet.testXmlContentXmlPath(TestGet.java:173)
+
+testXmlContent(com.api.rest.api.restassuredhelper.TestGet)  Time elapsed: 0.024 s  <<< ERROR!
+org.xml.sax.SAXParseException: Premature end of file.
+	at com.api.rest.api.restassuredhelper.TestGet.testXmlContent(TestGet.java:140)
+
+testContentJsonPath(com.api.rest.api.restassuredhelper.TestGet)  Time elapsed: 0.044 s  <<< ERROR!
+io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+	at com.api.rest.api.restassuredhelper.TestGet.testContentJsonPath(TestGet.java:198)
+Caused by: java.lang.IllegalArgumentException: The JSON input text should neither be null nor empty.
+	at com.api.rest.api.restassuredhelper.TestGet.testContentJsonPath(TestGet.java:198)
+
+testContent(com.api.rest.api.restassuredhelper.TestGet)  Time elapsed: 0.025 s  <<< ERROR!
+java.lang.IllegalArgumentException: The JSON input text should neither be null nor empty.
+	at com.api.rest.api.restassuredhelper.TestGet.testContent(TestGet.java:119)
+

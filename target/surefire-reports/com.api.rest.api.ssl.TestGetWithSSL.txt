@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.api.rest.api.ssl.TestGetWithSSL
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! - in com.api.rest.api.ssl.TestGetWithSSL
+testGet(com.api.rest.api.ssl.TestGetWithSSL)  Time elapsed: 0.041 s  <<< ERROR!
+java.io.FileNotFoundException: C:\Users\rahul.rathore\Desktop\Rest\Video\Resource\mykey.keystore (The system cannot find the path specified)
+	at com.api.rest.api.ssl.TestGetWithSSL.testGet(TestGetWithSSL.java:19)
+
+testGetWithCertificate(com.api.rest.api.ssl.TestGetWithSSL)  Time elapsed: 0.008 s  <<< ERROR!
+java.io.FileNotFoundException: C:\Users\rahul.rathore\Desktop\Rest\Video\Resource\mykey.keystore (The system cannot find the path specified)
+	at com.api.rest.api.ssl.TestGetWithSSL.testGetWithCertificate(TestGetWithSSL.java:39)
+

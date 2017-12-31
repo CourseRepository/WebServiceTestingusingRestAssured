@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.api.rest.api.restassuredhelper.TestQueryParameter
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.022 s <<< FAILURE! - in com.api.rest.api.restassuredhelper.TestQueryParameter
+testQueryPra(com.api.rest.api.restassuredhelper.TestQueryParameter)  Time elapsed: 0.022 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> doesn't match actual status code <404>.
+
+	at com.api.rest.api.restassuredhelper.TestQueryParameter.testQueryPra(TestQueryParameter.java:34)
+

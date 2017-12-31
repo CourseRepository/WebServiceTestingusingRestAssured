@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.api.rest.api.helper.TestGetandPostWithSSL
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.001 s <<< FAILURE! - in com.api.rest.api.helper.TestGetandPostWithSSL
+testGetnPost(com.api.rest.api.helper.TestGetandPostWithSSL)  Time elapsed: 2.001 s  <<< ERROR!
+java.lang.RuntimeException: Connect to localhost:8443 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at com.api.rest.api.helper.TestGetandPostWithSSL.testGetnPost(TestGetandPostWithSSL.java:36)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8443 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at com.api.rest.api.helper.TestGetandPostWithSSL.testGetnPost(TestGetandPostWithSSL.java:36)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at com.api.rest.api.helper.TestGetandPostWithSSL.testGetnPost(TestGetandPostWithSSL.java:36)
+

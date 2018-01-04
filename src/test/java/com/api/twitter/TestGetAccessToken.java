@@ -7,12 +7,9 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.http.HttpStatus;
 import org.apache.http.client.utils.URIBuilder;
 import org.junit.Ignore;
 import org.junit.Test;
-
-import com.api.rest.api.model.TwitterTokenModel;
 
 @Ignore
 public class TestGetAccessToken {

@@ -1,7 +1,10 @@
 package com.api.rest.api.helper;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.http.HttpStatus;
@@ -23,7 +26,7 @@ public class TestPostMethod {
 	@Test
 	public void testPost() {
 		String id = (int)(1000*(Math.random())) + "";
-		
+		List<String> expectedFeature = new ArrayList<>(Arrays.asList("8GB RAM", "1TB Hard Drive"));
 		String jsonBody = "{" +
 				"\"BrandName\": \"Dell\"," +
 				"\"Features\": {" +
@@ -45,6 +48,7 @@ public class TestPostMethod {
 		ResponseBody body = gson.fromJson(response.getResponseBody(), ResponseBody.class);
 		Assert.assertEquals(id, body.getId());
 		Assert.assertEquals("Latitude", body.getLaptopName());
+		Assert.assertEquals(expectedFeature, body.getFeatures().getFeature());
 		
 	}
 	

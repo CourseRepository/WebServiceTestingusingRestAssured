@@ -38,4 +38,17 @@ public class TestQueryParameter extends BaseClass {
 		
 	}
 	
+	@Test
+	public void testYoutube(){
+		 given()
+			.accept(ContentType.JSON)
+			.param("search_query", "java")
+			.when()
+			.get("https://www.youtube.com/results")
+			.then()
+			.assertThat()
+			.statusCode(HttpStatus.SC_OK);
+		 
+	}
+	
 }

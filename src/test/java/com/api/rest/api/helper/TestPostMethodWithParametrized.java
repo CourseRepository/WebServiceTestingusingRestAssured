@@ -1,6 +1,5 @@
 package com.api.rest.api.helper;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -11,22 +10,22 @@ import org.apache.http.HttpStatus;
 import org.apache.http.entity.ContentType;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import com.api.rest.api.model.ResponseBody;
 import com.api.rest.api.model.RestResponse;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class TestPostMethod {
-	
-	
+import junitparams.FileParameters;
+import junitparams.JUnitParamsRunner;
+
+@RunWith(JUnitParamsRunner.class)
+public class TestPostMethodWithParametrized {
 	
 	@Test
-	public void testPost() {
+	@FileParameters("src/test/resources/testdata.csv")
+	public void testPostWithParameter(String brandName){
 		String id = (int)(1000*(Math.random())) + "";
 		List<String> expectedFeature = new ArrayList<>(Arrays.asList("8GB RAM", "1TB Hard Drive"));
 		String jsonBody = "{" +
@@ -49,36 +48,8 @@ public class TestPostMethod {
 		Gson gson = builder.serializeNulls().setPrettyPrinting().create();
 		ResponseBody body = gson.fromJson(response.getResponseBody(), ResponseBody.class);
 		Assert.assertEquals(id, body.getId());
-		Assert.assertEquals("Latitude", body.getLaptopName());
+		Assert.assertEquals(brandName, body.getLaptopName());
 		Assert.assertEquals(expectedFeature, body.getFeatures().getFeature());
-		
-	}
-	
-	@Test
-	public void testPostWithXml() throws JsonParseException, JsonMappingException, IOException {
-		String id = (int)(1000*(Math.random())) + "";
-		String jsonBody = "{" +
-				"\"BrandName\": \"Dell\"," +
-				"\"Features\": {" +
-					"\"Feature\": [\"8GB RAM\"," +
-					"\"1TB Hard Drive\"]"+
-				"}," +
-				"\"Id\": " + id + "," +
-				"\"LaptopName\": \"Latitude\"" +
-			"}";
-		
-		Map<String, String> headers = new LinkedHashMap<String, String>();
-		headers.put("Accept", "application/xml");
-		headers.put("Content-Type", "application/json");
-		RestResponse response = RestApiHelper.performPostRequest("http://localhost:8080/laptop-bag/webapi/api/add", jsonBody, ContentType.APPLICATION_JSON, headers);
-		Assert.assertEquals(HttpStatus.SC_OK, response.getStatusCode());
-		response = RestApiHelper.performGetRequest("http://localhost:8080/laptop-bag/webapi/api/find/" + id, headers);
-		XmlMapper xml = new XmlMapper();
-		xml.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
-		ResponseBody body = xml.readValue(response.getResponseBody(), ResponseBody.class);
-		Assert.assertEquals("Dell", body.getBrandName());
-		Assert.assertEquals("Latitude", body.getLaptopName());
-		System.out.println(body.getFeatureList().size());
 	}
 
 }

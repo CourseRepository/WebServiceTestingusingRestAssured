@@ -1,5 +1,11 @@
 package com.api.rest.api.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -21,6 +27,7 @@ public class ResponseBody {
 	public void setId(String id) {
 		Id = id;
 	}
+	
 	@JsonProperty("LaptopName")
 	public String getLaptopName() {
 		return LaptopName;
@@ -28,6 +35,7 @@ public class ResponseBody {
 	public void setLaptopName(String laptopName) {
 		LaptopName = laptopName;
 	}
+	
 	@JsonProperty("Features")
 	public Features getFeatures() {
 		return Features;
@@ -38,6 +46,10 @@ public class ResponseBody {
 	private String Id;
 	private String LaptopName;
 	private Features Features;
+	
+	public List<String> getFeatureList(){
+		return Features.getFeature();
+	}
 	
 }
 

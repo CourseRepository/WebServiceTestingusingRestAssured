@@ -7,14 +7,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Features {
 	
-	private List<String> Feature = new ArrayList<String>();
+	private ArrayList<String> Feature;
 	
 	@JsonProperty("Feature")
 	public List<String> getFeature() {
 		return Feature;
 	}
 
-	public void setFeature(List<String> feature) {
+	public void setFeature(ArrayList<String> feature) {
 		Feature = feature;
 	}
 

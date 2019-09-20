@@ -23,6 +23,7 @@ com\api\rest\api\restassuredhelper\TestQueryParameter.class
 com\api\rest\api\ssl\TestGetWithSSL.class
 com\api\rest\api\restassuredhelper\runner\PostMethodRunner.class
 com\api\rest\api\auth\BaseSecureClass.class
+com\api\rest\api\helper\TestPostMethodWithParametrized.class
 com\api\rest\api\restassuredhelper\stepdfn\PostMethodStepDfn.class
 com\api\rest\api\helper\TestGetMethod.class
 com\api\rest\api\helper\TestPostMethod.class

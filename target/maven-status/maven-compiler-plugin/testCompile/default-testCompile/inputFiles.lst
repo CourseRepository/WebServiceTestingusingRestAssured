@@ -1,5 +1,7 @@
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\helper\TestGetandPostWithSSL.java
+C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\question\GetRequest.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\auth\TestGetWithSecure.java
+C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\question\TestQuestionGet.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\auth\StringSplitter.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\helper\TestPutMethod.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\restassuredhelper\TestPutMethod.java
@@ -14,6 +16,7 @@ C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\auth\BaseSecureClass.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\helper\Features.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\helper\TestDeleteMethod.java
+C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\helper\TestPostMethodWithParametrized.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\rest\api\helper\TestGetMethod.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\twitter\TestGetAccessToken.java
 C:\Data\GitHub\WebServiceTestingusingRestAssured\src\test\java\com\api\twitter\TestGetStatusList.java

@@ -1,46 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="example suite 1" duration-ms="2420" started-at="2017-12-28T12:34:48Z" finished-at="2017-12-28T12:34:51Z">
+  <suite name="Default suite" duration-ms="43647" started-at="2019-12-03T01:41:48Z" finished-at="2019-12-03T01:42:32Z">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.api.rest.api.restassuredhelper.runner.PostMethodTestNgRunner@1a968a59]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test name="Regression suite 1" duration-ms="2420" started-at="2017-12-28T12:34:48Z" finished-at="2017-12-28T12:34:51Z">
-      <class name="com.api.rest.api.restassuredhelper.runner.PostMethodTestNgRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.api.rest.api.restassuredhelper.runner.PostMethodTestNgRunner@1a968a59]" name="setUpClass" is-config="true" duration-ms="222" started-at="2017-12-28T18:04:48Z" finished-at="2017-12-28T18:04:49Z">
+    <test name="Default test" duration-ms="43647" started-at="2019-12-03T01:41:48Z" finished-at="2019-12-03T01:42:32Z">
+      <class name="com.api.rest.api.questions.DeSerializeJson">
+        <test-method status="PASS" signature="testDeSerializeJson()[pri:0, instance:com.api.rest.api.questions.DeSerializeJson@63021689]" name="testDeSerializeJson" duration-ms="43612" started-at="2019-12-02T17:41:48Z" finished-at="2019-12-02T17:42:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.api.rest.api.restassuredhelper.runner.PostMethodTestNgRunner@1a968a59]" name="feature" duration-ms="2007" started-at="2017-12-28T18:04:49Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2017-12-28T18:04:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Add a laptop detail to laptop-bag]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.api.rest.api.restassuredhelper.runner.PostMethodTestNgRunner@1a968a59]" name="feature" duration-ms="106" started-at="2017-12-28T18:04:51Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2017-12-28T18:04:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Feature file for Put method]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.api.rest.api.restassuredhelper.runner.PostMethodTestNgRunner@1a968a59]" name="tearDownClass" is-config="true" duration-ms="3" started-at="2017-12-28T18:04:51Z" finished-at="2017-12-28T18:04:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- com.api.rest.api.restassuredhelper.runner.PostMethodTestNgRunner -->
-    </test> <!-- Regression suite 1 -->
-  </suite> <!-- example suite 1 -->
+        </test-method> <!-- testDeSerializeJson -->
+      </class> <!-- com.api.rest.api.questions.DeSerializeJson -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

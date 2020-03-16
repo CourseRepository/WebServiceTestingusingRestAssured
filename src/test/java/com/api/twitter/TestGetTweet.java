@@ -7,12 +7,11 @@ import java.net.URISyntaxException;
 
 import org.apache.http.HttpStatus;
 import org.apache.http.client.utils.URIBuilder;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.api.rest.api.model.TwitterModel;
 
-@Ignore
+//@Ignore
 public class TestGetTweet {
 
 	private final String CONSUMER_KEY = "0aWgpyaiNWqnteNKZtr2Tpin8";
@@ -103,5 +102,33 @@ public class TestGetTweet {
 		.asString();
 		
 		System.out.println(delete);
+	}
+	
+	@Test
+	public void postStatusUpdateTwo() throws URISyntaxException
+	{
+		final String consumerKey = "fFkN32KvL4Me3jUvhAwdczAX1";
+		final String consumerSecret = "HA5dye1L7ZwJK4bPjtmRx6R9aRuqIL0kYO1zrSHwtNCHk1JrqN";
+		final String accessToken = "1078753939439403008-os5lqnp6haCylw39Ve2EJTp0qODMKa";
+		final String secretToken = "8AkOC0y6o6976GMOaX3hRi78A2ykKpin7edip9Y25hr05";
+		/*
+		 * https://api.twitter.com/1.1/statuses/update.json?status=hello
+		 * 
+		 * 
+		 */
+		URI postURI = new URIBuilder()
+							.setScheme("https")
+							.setHost("api.twitter.com/")
+							.setPath("1.1/statuses/update.json")
+							.addParameter("status", "This-is-RestAssured-status")
+							.build();
+		given()
+		.auth()
+		.oauth(consumerKey, consumerSecret, accessToken, secretToken)
+		.when()
+		.post(postURI)
+		.then()
+		.assertThat()
+		.statusCode(HttpStatus.SC_OK);
 	}
 }

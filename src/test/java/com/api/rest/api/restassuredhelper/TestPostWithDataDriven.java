@@ -76,7 +76,7 @@ public class TestPostWithDataDriven extends BaseClass {
 	// 2 Store the data in a array list
 	// 3 Create the object of laptop bag class
 	// 4 Create the object of laptop bag class for every entry inside the array list
-	// 5 the use the Parameterized concept to pass the object to the post request
+	// 5 then use the Parameterized concept to pass the object to the post request
 	
 	private static ArrayList<LaptopBag> getLapTopBagObject() {
 		ArrayList<LaptopBag> laptopBagList = new ArrayList<>();

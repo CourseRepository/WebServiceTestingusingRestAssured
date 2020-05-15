@@ -1,4 +1,5 @@
 com\api\rest\api\helper\TestQueryParameter.class
+com\api\rest\api\restassuredhelper\mocks\TestGetUsingMock.class
 com\api\rest\api\helper\TestDeleteAndPutWithSSL.class
 com\api\twitter\TestGetAccessToken.class
 com\api\rest\api\auth\SeperatorType.class
@@ -10,15 +11,23 @@ com\api\rest\api\ssl\BaseSSLClass.class
 com\api\twitter\TestGetTweet.class
 com\api\rest\api\restassuredhelper\BaseClass.class
 com\api\rest\api\auth\StringSplitter.class
+com\api\rest\api\questions\model\Members.class
+com\api\rest\api\questions\model\Credentials.class
 com\api\rest\api\helper\TestGetandPostWithSSL.class
+com\api\rest\api\questions\DeSerializeJson.class
+com\api\rest\api\questions\model\Root.class
 com\api\rest\api\restassuredhelper\hooks\GeneralHooks.class
 com\api\rest\api\restassuredhelper\runner\PostMethodTestNgRunner.class
+com\api\rest\api\questions\model\Cashcard.class
 com\api\rest\api\restassuredhelper\TestGet.class
+com\api\rest\api\questions\model\Addresses.class
 com\api\rest\api\helper\Features.class
 com\api\rest\api\helper\LaptopBag.class
 com\api\rest\api\helper\TestAsyncClient.class
 com\api\rest\api\helper\TestDeleteMethod.class
 com\api\rest\api\oauth\TestAccessToken.class
+com\api\rest\api\questions\model\Consumers.class
+com\api\rest\api\restassuredhelper\TestPostWithDataDriven.class
 com\api\rest\api\restassuredhelper\TestQueryParameter.class
 com\api\rest\api\ssl\TestGetWithSSL.class
 com\api\rest\api\restassuredhelper\runner\PostMethodRunner.class
@@ -27,6 +36,7 @@ com\api\rest\api\helper\TestPostMethodWithParametrized.class
 com\api\rest\api\restassuredhelper\stepdfn\PostMethodStepDfn.class
 com\api\rest\api\helper\TestGetMethod.class
 com\api\rest\api\helper\TestPostMethod.class
+com\api\rest\api\questions\model\Phones.class
 com\api\rest\api\restassuredhelper\stepdfn\PutMethodStepDfn.class
 com\api\rest\api\auth\TestGetWithSecure.class
 com\api\twitter\TestGetStatusList.class

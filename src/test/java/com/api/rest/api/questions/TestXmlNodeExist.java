@@ -29,8 +29,11 @@ public class TestXmlNodeExist {
 		.get("http://localhost:8080/laptop-bag/webapi/api/all")
 		.andReturn()
 		.asString();
+		
+		// Using Dom4j parser for xml
 		SAXReader reader = new SAXReader();
 		Document doc = reader.read(new StringReader(xml));
+		// Using XPath to search a node in the XML Doc
 		List<Node> node = doc.selectNodes("/laptopDetailss/Laptop/BrandName");
 		assertTrue(node.size() >= 1,"Node is missing in response");
 		

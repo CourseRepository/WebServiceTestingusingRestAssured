@@ -65,6 +65,14 @@ public class TestGet extends BaseClass {
 		// validation of response then()
 
 	}
+	
+	@Test
+	public void testStatusCodeInNumeric() throws URISyntaxException {
+		given().accept(ContentType.JSON)
+				.when()
+				.get(new URI("http://localhost:8080/laptop-bag/webapi/api/all"))
+				.then().assertThat().statusCode(200);
+	}
 
 	@Test
 	public void testGetWithId() throws URISyntaxException {

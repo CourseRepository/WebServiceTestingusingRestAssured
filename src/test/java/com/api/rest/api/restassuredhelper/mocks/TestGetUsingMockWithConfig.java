@@ -13,6 +13,7 @@ import org.junit.Test;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
 import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -21,7 +22,7 @@ import io.restassured.http.ContentType;
 * rathr1
 * 
 **/
-public class TestGetUsingMockWithFile {
+public class TestGetUsingMockWithConfig {
 	
 	/**
 	 * 1. Create the Wiremock server and start
@@ -31,11 +32,14 @@ public class TestGetUsingMockWithFile {
 	 * 4. Shutdown the WireMock Server
 	 * 
 	 * */
-	private static final int PORT = 8080;
+	private static final int PORT = 8180;
 	private static final String HOST = "localhost";
 	
-	private static WireMockServer server = new WireMockServer(PORT);
-	private static ResourceHelper resourceHelper = new ResourceHelper();
+
+	private static WireMockConfiguration config = WireMockConfiguration.options()
+			.bindAddress(HOST)
+			.port(PORT);
+	private static WireMockServer server = new WireMockServer(config);
 	
 	@BeforeClass
 	public static void setup() {
@@ -43,10 +47,10 @@ public class TestGetUsingMockWithFile {
 		
 		ResponseDefinitionBuilder mockResponse = new ResponseDefinitionBuilder();
 		mockResponse.withStatus(200)
-		.withBodyFile("data/test_1.json")
+		.withBodyFile("test.json")
 		.withHeader("Content-Type", "application/json");
 		
-		WireMock.configureFor(HOST, PORT); // http://localhost:8080
+		WireMock.configureFor(HOST, PORT); // http://localhost:8180
 		WireMock.stubFor(
 				WireMock.get("/laptop-bag/webapi/api/all")
 				.willReturn(mockResponse)
@@ -58,7 +62,7 @@ public class TestGetUsingMockWithFile {
 		RestAssured.given()
 		.accept(ContentType.JSON)
 		.when()
-		.get(new URI("http://localhost:8080/laptop-bag/webapi/api/all"))
+		.get(new URI("http://localhost:8180/laptop-bag/webapi/api/all"))
 		.then()
 		.assertThat()
 		.statusCode(HttpStatus.SC_OK)

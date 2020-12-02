@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "BrandName": {
+          "type": "string"
+        },
+        "Features": {
+          "type": "object",
+          "properties": {
+            "Feature": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "Feature"
+          ]
+        },
+        "Id": {
+          "type": "integer"
+        },
+        "LaptopName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "BrandName",
+        "Features",
+        "Id",
+        "LaptopName"
+      ]
+    }
+  ]
+}

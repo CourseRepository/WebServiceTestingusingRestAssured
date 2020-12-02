@@ -173,5 +173,11 @@
 			<artifactId>jaxen</artifactId>
 			<version>1.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>3.3.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

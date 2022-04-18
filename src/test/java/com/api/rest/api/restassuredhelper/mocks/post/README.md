@@ -1,0 +1,1 @@
+![WireMock_Design](./WireMock_Design.jpg)

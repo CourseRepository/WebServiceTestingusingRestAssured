@@ -17,7 +17,7 @@ public class ReadAndModifyJson {
 		System.err.println("--------------- JSON before Modification --------------");
 		System.out.println(inputJson);
 		inputJsonObject.put("description", "REST Automation Framework create the BUG-127867");
-		String updatedJson = inputJsonObject.toString();
+		String updatedJson = inputJsonObject.toString(3);
 		System.err.println("--------------- JSON After Modification --------------");
 		System.out.println(updatedJson);
 	}

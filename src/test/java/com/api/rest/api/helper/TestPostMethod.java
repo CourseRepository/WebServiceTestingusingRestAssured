@@ -1,5 +1,6 @@
 package com.api.rest.api.helper;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,6 +80,18 @@ public class TestPostMethod {
 		Assert.assertEquals("Dell", body.getBrandName());
 		Assert.assertEquals("Latitude", body.getLaptopName());
 		System.out.println(body.getFeatureList().size());
+	}
+	
+	@Test
+	public void TestFormDataFileUpload() {
+		String url = "http://localhost:9191/normal/webapi/upload";
+		File upload = new File("C:\\Data\\log\\book.zip");
+		RestResponse response = RestApiHelper.performPostRequest(url, upload, ContentType.MULTIPART_FORM_DATA,
+				new LinkedHashMap<String, String>());
+		Assert.assertEquals(HttpStatus.SC_OK, response.getStatusCode());
+		String path = System.getProperty("java.io.tmpdir") + upload.getName();
+		File verify = new File(path);
+		Assert.assertTrue("File upload is not successfull", verify.exists());
 	}
 
 }

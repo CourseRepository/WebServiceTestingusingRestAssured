@@ -17,6 +17,7 @@ import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.FileEntity;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -71,7 +72,13 @@ public class RestApiHelper {
 	}
 	
 	private static HttpEntity getHttpEntity(Object content,ContentType type) {
-		if(content instanceof String)
+		if(type == ContentType.MULTIPART_FORM_DATA) {
+			MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+			File fileToUpload = (File)content;
+			builder.addBinaryBody("file", fileToUpload, type, fileToUpload.getName());
+			return builder.build();
+		}
+		else if(content instanceof String)
 			return new StringEntity((String)content, type);
 		else if (content instanceof File) 
 			return new FileEntity((File)content, type);

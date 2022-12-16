@@ -14,6 +14,8 @@ import org.junit.Test;
 
 import com.api.rest.api.helper.Features;
 import com.api.rest.api.helper.LaptopBag;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 public class TestPostMethod extends BaseClass {
 	
@@ -177,4 +179,53 @@ public class TestPostMethod extends BaseClass {
 		
 	}
 	
+	@Test
+	public void testPostwithDeserialization_Gson() {
+		
+		/**
+		 * 1. Create the mapping class
+		 * 2. Create the object of mapping class
+		 * 3. Initialize the field value present in mapping class
+		 * 4. Send the object along with post request
+		 * **/
+		String id = (int)(1000*(Math.random())) + "";
+		LaptopBag bag = new LaptopBag();
+		bag.setBrandName("Microsoft");
+		bag.setId(id);
+		bag.setLaptopName("Microsoft Surface");
+		Features fet = new Features();
+		fet.setFeature(new ArrayList<String>(Arrays.asList("8GB RAM","1TB Hard Drive")));
+		bag.setFeatures(fet);
+		
+		// Object to body (request body) :- OM Serialization
+		// body (response body) to object :- Deserialization
+		
+		
+		/****
+		 * Given Accept the content in JSON Format
+		 * With Content Type as XML
+		 * And Body
+		 * When I perform the Post request
+		 * Then Status code 200 OK should be returned 
+		 * And The response should contain the ID
+		 */
+		
+		
+		String responseBag = given()
+		.log()
+		.everything()
+		.accept(ContentType.JSON)
+		.with()
+		.contentType(ContentType.JSON)
+		.body(bag)
+		.post("/add")
+		.thenReturn()
+		.asString();
+		
+		JsonObject jsonObject = new Gson().fromJson(responseBag, JsonObject.class);
+		System.out.println("TestPostMethod.testPostwithDeserialization_Gson(): " + jsonObject);
+				
+		
+		
+	}
 }
